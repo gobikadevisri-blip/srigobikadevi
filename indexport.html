@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sri Gobika Devi G | B.Tech IT Student Portfolio</title>
+<meta name="description" content="Portfolio of Sri Gobika Devi G, third-year B.Tech Information Technology student at SRM Institute of Science and Technology.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💜</text></svg>">
+<style>
+/* ===== Theme tokens (dark = default, matches uploaded design) ===== */
+:root{
+  --bg:#070a24; --bg2:#0d1135; --card:rgba(20,26,70,.65); --line:rgba(139,92,246,.28);
+  --text:#f4f5ff; --muted:#b4b9dd; --violet:#8b5cf6; --blue:#4f8cff; --pill:rgba(30,38,95,.7);
+  --grad:linear-gradient(135deg,#7c3aed,#6366f1 60%,#4f8cff);
+  --text-grad:linear-gradient(90deg,#8b5cf6,#60a5fa);
+  --safe:env(safe-area-inset-top,0px);
+}
+:root[data-theme="light"]{
+  --bg:#f4f5ff; --bg2:#e8eaff; --card:rgba(255,255,255,.85); --line:rgba(99,70,200,.25);
+  --text:#161a3d; --muted:#4b517f; --pill:#fff;
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]):not([data-theme="light"]){--bg:#f4f5ff;--bg2:#e8eaff;--card:rgba(255,255,255,.85);--line:rgba(99,70,200,.25);--text:#161a3d;--muted:#4b517f;--pill:#fff}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:"Poppins","Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:
+  radial-gradient(60% 40% at 80% 5%,rgba(79,70,229,.35),transparent),
+  radial-gradient(50% 40% at 0% 60%,rgba(124,58,237,.22),transparent),var(--bg)}
+a{color:inherit;text-decoration:none}
+img,svg{max-width:100%}
+.wrap{width:min(1120px,92%);margin-inline:auto}
+section{padding:72px 0}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.grad{background:var(--text-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ===== Navbar ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:var(--safe);background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.05rem;white-space:nowrap}
+.logo b{color:var(--violet);font-size:1.5rem;letter-spacing:-2px}
+nav ul{display:flex;gap:22px;list-style:none}
+nav a{font-size:.88rem;color:var(--muted);padding:6px 0;border-bottom:2px solid transparent;transition:.2s}
+nav a:hover,nav a.active{color:var(--text);border-color:var(--violet)}
+.tools{display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:999px;font:600 .95rem inherit;font-family:inherit;border:1.5px solid var(--violet);color:var(--text);background:transparent;cursor:pointer;transition:.25s}
+.btn.fill{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 8px 28px rgba(124,58,237,.4)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(124,58,237,.45)}
+.btn.sm{padding:8px 18px;font-size:.85rem}
+.icon-btn{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--line);background:var(--pill);color:var(--text);cursor:pointer;font-size:1.1rem}
+#menu{display:none}
+
+/* ===== Hero ===== */
+#home{padding-top:140px;min-height:100vh;display:flex;align-items:center}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.3rem,6vw,4rem);line-height:1.1;font-weight:800}
+.hero .hi{display:block;font-size:.55em;font-weight:600;color:var(--muted);margin-bottom:6px}
+.hero h2{font-size:clamp(1.05rem,2.4vw,1.4rem);font-weight:600;margin:18px 0 6px}
+.hero .sub{color:var(--muted);font-size:1rem}
+.bar{width:64px;height:4px;border-radius:4px;background:var(--grad);margin:16px 0}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.art{display:flex;justify-content:center}
+.laptop{width:min(420px,100%);filter:drop-shadow(0 0 40px rgba(99,102,241,.55));animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px)}}
+
+/* ===== Section titles & cards ===== */
+.title{display:flex;align-items:center;justify-content:center;gap:18px;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;margin-bottom:40px}
+.title::before,.title::after{content:"";height:2px;width:min(120px,14vw);background:linear-gradient(90deg,transparent,var(--violet))}
+.title::after{transform:scaleX(-1)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;backdrop-filter:blur(6px);transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:var(--violet);box-shadow:0 14px 40px rgba(99,70,230,.3)}
+
+/* About */
+.about{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:center;max-width:900px;margin:auto}
+.about p{color:var(--muted)}
+.about .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.chip{padding:6px 14px;border-radius:999px;background:var(--pill);border:1px solid var(--line);font-size:.82rem}
+
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px}
+.skill{text-align:center;padding:24px 14px;border-radius:22px}
+.skill .ic{width:58px;height:58px;margin:0 auto 12px;border-radius:16px;display:grid;place-items:center;font-weight:800;font-size:1.05rem;color:#fff}
+.skill span{font-weight:600;font-size:.95rem}
+
+/* Projects */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.proj{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.thumb{height:150px;display:grid;place-items:center;background:linear-gradient(135deg,#1e3a8a,#5b21b6 70%,#7c3aed);position:relative}
+.thumb svg{width:64px;height:64px;color:#c7d2fe;opacity:.95}
+.thumb small{position:absolute;bottom:8px;right:12px;font-size:.7rem;color:#c7d2fe;opacity:.8}
+.proj .body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.proj h3{font-size:1.15rem}
+.proj p{color:var(--muted);font-size:.92rem;flex:1}
+.link{background:none;border:none;color:var(--violet);font:600 .95rem inherit;font-family:inherit;cursor:pointer;text-align:left;padding:0}
+.link:hover{text-decoration:underline}
+.note{font-size:.8rem;color:var(--muted);min-height:1.2em}
+
+/* Timeline / lists */
+.tl{max-width:760px;margin:auto;border-left:2px solid var(--line);padding-left:28px;position:relative}
+.tl .card::before{content:"";position:absolute;left:-37px;top:34px;width:14px;height:14px;border-radius:50%;background:var(--grad);box-shadow:0 0 0 4px var(--bg)}
+.tl .card{position:relative;margin-bottom:22px}
+.card h3{margin-bottom:4px}
+.card p,.card li{color:var(--muted);font-size:.93rem}
+.card ul{padding-left:18px;margin-top:8px}
+.badge{display:inline-block;margin-top:10px;padding:4px 12px;border-radius:999px;background:var(--grad);color:#fff;font-size:.78rem;font-weight:600}
+.cert .emoji{font-size:1.8rem;margin-bottom:8px}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:30px}
+.contact .row{display:flex;gap:12px;align-items:center;margin:14px 0;color:var(--muted);word-break:break-all}
+.contact .row b{color:var(--violet)}
+form{display:grid;gap:14px}
+label{font-size:.85rem;color:var(--muted)}
+input,textarea{width:100%;margin-top:4px;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--pill);color:var(--text);font:inherit}
+input:focus,textarea:focus{outline:none;border-color:var(--violet)}
+.err{color:#f87171;font-size:.78rem;min-height:1em;display:block}
+#status{padding:12px 14px;border-radius:12px;font-size:.88rem;display:none}
+#status.ok{display:block;background:rgba(34,197,94,.15);color:#4ade80}
+#status.bad{display:block;background:rgba(248,113,113,.15);color:#f87171}
+
+footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:var(--muted);font-size:.9rem}
+#top{position:fixed;right:20px;bottom:20px;opacity:0;pointer-events:none;transition:.3s;z-index:40;background:var(--grad);color:#fff;border:none}
+#top.show{opacity:1;pointer-events:auto}
+
+/* ===== Responsive ===== */
+@media(max-width:900px){
+  .hero,.contact{grid-template-columns:1fr}
+  .art{order:-1}.laptop{width:min(300px,80%)}
+  #menu{display:block}
+  nav{position:absolute;top:100%;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--line);display:none;padding:12px 0}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:0;align-items:center}
+  nav a{display:block;padding:12px}
+  .dl{display:none}
+}
+@media(max-width:560px){
+  section{padding:56px 0}
+  .about{grid-template-columns:1fr;text-align:center}
+  .about .facts{justify-content:center}
+  .title::before,.title::after{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<header>
+  <div class="wrap nav">
+    <a href="#home" class="logo"><b>&lt;/&gt;</b> Sri Gobika Devi G</a>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="tools">
+      <button class="icon-btn" id="theme" aria-label="Toggle dark and light mode">☾</button>
+      <button class="btn sm dl" id="resume">⬇ Download Resume</button>
+      <button class="icon-btn" id="menu" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ===== HOME ===== -->
+<section id="home">
+  <div class="wrap hero">
+    <div>
+      <h1><span class="hi">Hi, I'm</span><span class="grad">Sri Gobika Devi G</span></h1>
+      <h2>B.Tech Information Technology Student</h2>
+      <div class="bar"></div>
+      <p class="sub">Third Year | SRM Institute of Science and Technology</p>
+      <div class="cta">
+        <a href="#projects" class="btn fill">Explore My Projects</a>
+        <a href="#contact" class="btn">✉ Contact Me</a>
+      </div>
+    </div>
+    <div class="art" aria-hidden="true">
+      <svg class="laptop" viewBox="0 0 400 320" fill="none">
+        <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#4f8cff"/></linearGradient></defs>
+        <ellipse cx="200" cy="270" rx="170" ry="34" stroke="url(#g)" stroke-width="3" opacity=".8"/>
+        <path d="M95 60l210-8 14 150-238 6z" fill="#101654" stroke="url(#g)" stroke-width="3"/>
+        <path d="M70 208l250-4 22 36-290 6z" fill="#1b2270" stroke="url(#g)" stroke-width="2"/>
+        <path d="M185 100l-35 36 35 36M225 100l35 36-35 36M215 90l-30 92" stroke="url(#g)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="10" y="40" width="78" height="56" rx="8" fill="#1a2370" stroke="#6366f1" opacity=".9"/>
+        <path d="M22 60h40M22 72h54M22 84h30" stroke="#60a5fa" stroke-width="5" stroke-linecap="round"/>
+        <rect x="320" y="90" width="68" height="60" rx="8" fill="#1a2370" stroke="#8b5cf6" opacity=".9"/>
+        <path d="M334 112h40M334 126h28" stroke="#a78bfa" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="wrap">
+    <h2 class="title">About <span class="grad">Me</span></h2>
+    <div class="about">
+      <svg viewBox="0 0 200 180" fill="none" aria-hidden="true">
+        <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#4f8cff"/></linearGradient></defs>
+        <path d="M20 120l80-20 80 20v18l-80 20-80-20z" fill="#2a2f9c" stroke="url(#g2)" stroke-width="2"/>
+        <path d="M100 30L18 66l82 34 82-34z" fill="#1e2a7a" stroke="url(#g2)" stroke-width="3"/>
+        <path d="M54 84v28c0 12 92 12 92 0V84" stroke="url(#g2)" stroke-width="3"/>
+        <path d="M168 70v40" stroke="#a78bfa" stroke-width="3"/><circle cx="168" cy="114" r="5" fill="#a78bfa"/>
+      </svg>
+      <div>
+        <p>I am Sri Gobika Devi G, a third-year B.Tech Information Technology student at SRM Institute of Science and Technology. I am passionate about technology, programming and developing innovative solutions. I enjoy exploring new technologies, improving my technical knowledge and applying my skills through practical projects. I am also interested in participating in hackathons and technical workshops to gain practical experience.</p>
+        <div class="facts"><span class="chip">B.Tech IT</span><span class="chip">Third Year</span><span class="chip">SRM Institute of Science and Technology</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills">
+  <div class="wrap">
+    <h2 class="title">My <span class="grad">Skills</span></h2>
+    <div class="skills">
+      <div class="card skill"><div class="ic" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6)">C</div><span>C Programming</span></div>
+      <div class="card skill"><div class="ic" style="background:linear-gradient(135deg,#2563eb,#facc15)">Py</div><span>Python</span></div>
+      <div class="card skill"><div class="ic" style="background:linear-gradient(135deg,#dc2626,#f97316)">☕</div><span>Java</span></div>
+      <div class="card skill"><div class="ic" style="background:linear-gradient(135deg,#0ea5e9,#2563eb)">⛁</div><span>MySQL</span></div>
+      <div class="card skill"><div class="ic" style="background:linear-gradient(135deg,#1e3a8a,#e97627)">▦</div><span>Tableau</span></div>
+      <div class="card skill"><div class="ic" style="background:linear-gradient(135deg,#0369a1,#38bdf8)">&lt;/&gt;</div><span>VS Code</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects">
+  <div class="wrap">
+    <h2 class="title">My <span class="grad">Projects</span></h2>
+    <div class="grid3">
+      <article class="card proj">
+        <div class="thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><rect x="22" y="6" width="20" height="52" rx="6"/><circle cx="32" cy="18" r="4" fill="currentColor"/><circle cx="32" cy="32" r="4"/><circle cx="32" cy="46" r="4"/></svg><small>Screenshot placeholder</small></div>
+        <div class="body"><h3>Smart Traffic Management System</h3><p>A project focused on improving traffic management and making traffic flow more efficient.</p>
+        <button class="link" data-note="Project details will be added soon.">View Project →</button><span class="note"></span></div>
+      </article>
+      <article class="card proj">
+        <div class="thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 12L6 24l26 12 26-12z"/><path d="M16 30v12c0 6 32 6 32 0V30"/></svg><small>Screenshot placeholder</small></div>
+        <div class="body"><h3>Student Management System</h3><p>A system designed to manage student information and academic records efficiently.</p>
+        <button class="link" data-note="Project details will be added soon.">View Project →</button><span class="note"></span></div>
+      </article>
+      <article class="card proj">
+        <div class="thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="40" r="12"/><path d="M24 40l10-14h10M44 26l4 18M52 44h-8"/><circle cx="40" cy="12" r="4"/></svg><small>Screenshot placeholder</small></div>
+        <div class="body"><h3>Smart Door for Wheelchair Users</h3><p>A project focused on improving accessibility and convenience for wheelchair users.</p>
+        <button class="link" data-note="Project details will be added soon.">View Project →</button><span class="note"></span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EDUCATION ===== -->
+<section id="education">
+  <div class="wrap">
+    <h2 class="title">My <span class="grad">Education</span></h2>
+    <div class="tl">
+      <div class="card">
+        <h3>SRM Institute of Science and Technology</h3>
+        <p>Bachelor of Technology (B.Tech) · Information Technology</p>
+        <p>Current Academic Year: Third Year</p>
+        <span class="badge">Currently Pursuing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CERTIFICATIONS ===== -->
+<section id="certifications">
+  <div class="wrap">
+    <h2 class="title"><span class="grad">Certifications</span> &amp; Participation</h2>
+    <div class="grid3">
+      <div class="card cert"><div class="emoji">🏆</div><h3>Hackathons</h3><p>Participated in multiple hackathons.</p></div>
+      <div class="card cert"><div class="emoji">🛠️</div><h3>Technical Workshops</h3><p>Attended various technical workshops.</p></div>
+      <div class="card cert"><div class="emoji">🎓</div><h3>IIT Madras Workshop</h3><p>Attended a technical workshop at IIT Madras (IIT Chennai).</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience">
+  <div class="wrap">
+    <h2 class="title"><span class="grad">Experience</span></h2>
+    <div class="tl">
+      <div class="card"><h3>Technical Workshop, IIT Madras</h3><p>Participated in a technical workshop at IIT Madras (IIT Chennai).</p></div>
+      <div class="card"><h3>Technical Learning Activities</h3><ul><li>Hackathon participation</li><li>Technical workshops</li><li>Hands-on practical projects</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="wrap">
+    <h2 class="title">Contact <span class="grad">Me</span></h2>
+    <div class="contact">
+      <div class="card">
+        <h3>Let's connect</h3>
+        <div class="row"><b>✉</b><a href="mailto:gobikadevisri@gmail.com">gobikadevisri@gmail.com</a></div>
+        <div class="row"><b>📍</b><span>SRM Institute of Science and Technology</span></div>
+        <a class="btn fill" href="https://www.linkedin.com/in/sri-gobika-devi-g-6a4761356/" target="_blank" rel="noopener">in&nbsp; LinkedIn</a>
+      </div>
+      <form class="card" id="form" novalidate>
+        <label>Name<input id="name" autocomplete="name"><span class="err"></span></label>
+        <label>Email<input id="email" type="email" autocomplete="email"><span class="err"></span></label>
+        <label>Subject<input id="subject"><span class="err"></span></label>
+        <label>Message<textarea id="message" rows="4"></textarea><span class="err"></span></label>
+        <button class="btn fill" type="submit" style="justify-content:center">Send Message</button>
+        <div id="status" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> Sri Gobika Devi G. All rights reserved. 💜</div></footer>
+<button class="icon-btn" id="top" aria-label="Back to top">↑</button>
+
+<script>
+/* ===== Helpers ===== */
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+$('#yr').textContent = new Date().getFullYear();
+
+/* ===== Theme toggle (remembered when storage is available) ===== */
+const root = document.documentElement, themeBtn = $('#theme');
+function setTheme(t){ root.dataset.theme = t; themeBtn.textContent = t === 'dark' ? '☾' : '☀'; try{ localStorage.setItem('theme', t) }catch(e){} }
+let saved = null; try{ saved = localStorage.getItem('theme') }catch(e){}
+setTheme(saved || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
+themeBtn.onclick = () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
+
+/* ===== Mobile menu ===== */
+const nav = $('#nav'), menu = $('#menu');
+menu.onclick = () => { const o = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', o); };
+$$('nav a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); menu.setAttribute('aria-expanded', false); }));
+
+/* ===== Active link highlight + back-to-top ===== */
+const links = $$('nav a'), secs = links.map(a => $(a.getAttribute('href')));
+addEventListener('scroll', () => {
+  let cur = 0; secs.forEach((s, i) => { if (s.getBoundingClientRect().top < 140) cur = i; });
+  links.forEach((a, i) => a.classList.toggle('active', i === cur));
+  $('#top').classList.toggle('show', scrollY > 500);
+}, {passive:true});
+$('#top').onclick = () => scrollTo({top:0, behavior:'smooth'});
+
+/* ===== Placeholder buttons (no fake links) ===== */
+$('#resume').onclick = () => alert('My resume will be available here soon.');
+$$('.link').forEach(b => b.onclick = () => { b.nextElementSibling.textContent = b.dataset.note; });
+
+/* ===== Contact form: validation + mail-app handoff (no backend configured) ===== */
+const form = $('#form'), status = $('#status');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const v = id => $('#' + id).value.trim();
+  const rules = {
+    name: v('name') ? '' : 'Enter your name.',
+    email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('email')) ? '' : 'Enter a valid email address.',
+    subject: v('subject') ? '' : 'Enter a subject.',
+    message: v('message').length >= 10 ? '' : 'Write at least 10 characters.'
+  };
+  let ok = true;
+  Object.entries(rules).forEach(([id, msg]) => { $('#' + id).parentElement.querySelector('.err').textContent = msg; if (msg) ok = false; });
+  if (!ok){ status.className = 'bad'; status.textContent = 'Please fix the highlighted fields and try again.'; return; }
+  const body = `Name: ${v('name')}\nEmail: ${v('email')}\n\n${v('message')}`;
+  location.href = `mailto:gobikadevisri@gmail.com?subject=${encodeURIComponent(v('subject'))}&body=${encodeURIComponent(body)}`;
+  status.className = 'ok';
+  status.textContent = 'Your email app should open with the message ready. Press send there to deliver it.';
+});
+</script>
+</body>
+</html>
